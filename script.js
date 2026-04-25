@@ -247,6 +247,19 @@ function openGame(game) {
     }, 400);
 }
 
+const fullscreenBtn = document.getElementById('fullscreen-btn');
+
+fullscreenBtn.addEventListener('click', () => {
+    const iframe = document.getElementById('game-frame');
+    if (iframe) {
+        if (iframe.requestFullscreen) {
+            iframe.requestFullscreen().catch(err => {
+                console.error(`Error attempting to enable fullscreen: ${err.message}`);
+            });
+        }
+    }
+});
+
 closeBtn.addEventListener('click', () => {
     gameModal.classList.add('hidden');
     iframeContainer.innerHTML = '';
