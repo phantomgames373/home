@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phantom Games</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Glassmorphic Background Objects -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1 class="logo">Phantom<br><span>Games</span></h1>
+        </div>
+        <nav class="category-nav">
+            <ul>
+                <li class="active" data-category="home">🏠 Home</li>
+                <li data-category="trending">🔥 Trending</li>
+                <li data-category="sports">⚽ Sports</li>
+                <li data-category="adventure">🗺️ Adventure</li>
+                <li data-category="fighting">⚔️ Fighting</li>
+                <li data-category="strategy">🧠 Strategy</li>
+                <li data-category="puzzle">🧩 Puzzle</li>
+
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <span id="game-count" class="game-count">0 games loaded</span>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <header class="top-header">
+            <div class="header-left">
+                <h2 id="page-title">Home</h2>
+            </div>
+            <div class="header-right">
+                <div class="search-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="search-bar" placeholder="Search games...">
+                </div>
+            </div>
+        </header>
+
+        <div class="scrollable-content">
+            <!-- Trending Section (Visible only on Home) -->
+            <section id="trending-section" class="home-section">
+                <div class="section-top">
+                    <h3>Trending Games</h3>
+                </div>
+                <div id="trending-grid" class="trending-carousel">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+
+            <!-- All Games / Category Grid -->
+            <section id="all-games-section" class="home-section mt-4">
+                <div class="section-top">
+                    <h3 id="grid-title">Featured Games</h3>
+                </div>
+                <div id="game-grid" class="phantom-grid">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Game Playing Modal -->
+    <div id="game-modal" class="hidden">
+        <div class="modal-overlay-bg"></div>
+        <div class="modal-content glass-panel">
+            <div class="modal-header">
+                <h2 id="modal-title">Game Title</h2>
+                <button id="close-btn" class="glass-btn">
+                    <span class="close-icon">✖</span> Close
+                </button>
+            </div>
+            <div id="iframe-container"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
